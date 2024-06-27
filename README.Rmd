@@ -129,7 +129,7 @@ leaflet() %>%
     - (opcional) Zotero Desktop y cuenta en Zotero. Te podría ayudar a manejar citas y referencias. Existen otros servicios, como Scite y CiteDrive
 
 - **Datos:** Imágenes satelitales (por ejemplo, Landsat, Sentinel), bases de datos geográficos disponibles públicamente. Orientaré dónde obtener estas fuentes, pero últimamente recomiendo apuntar primero al Google Earth Engine.
-- **Lecturas:** Las que deseen traer; son bienvenidos artículos introductorios y tutoriales en línea sobre QGIS, R, RStudio, Jupyter y Google Earth Engine.
+- **Lecturas:** Las que deseen traer; son bienvenidos artículos introductorios y tutoriales en línea sobre QGIS, R y Python para geociencias, y Google Earth Engine.
 
 # Referencias destacadas
 
