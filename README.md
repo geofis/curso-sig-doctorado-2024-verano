@@ -3,7 +3,7 @@ Curso introductorio a los Sistemas de Información Geográfica (SIG)
 José Martínez
 
 Versión HTML (más legible e interactiva),
-[aquí](https://geofis.github.io/curso-r-qgis-2024-verano/README.html)
+[aquí](https://geofis.github.io/curso-sig-doctorado-2024-verano/README.html)
 
 # Presentaciones de diapositivas incluidas en este repo:
 

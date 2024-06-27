@@ -42,9 +42,9 @@ output_format <- knitr::opts_knit$get("rmarkdown.pandoc.to")
 ```{r, results='asis', echo=F}
 # Insertar el enlace basado en el formato de salida
 if (grepl('gfm', output_format)) {
-  cat('Versión HTML (más legible e interactiva), [aquí](https://geofis.github.io/curso-r-qgis-2024-verano/README.html)\n')
+  cat('Versión HTML (más legible e interactiva), [aquí](https://geofis.github.io/curso-sig-doctorado-2024-verano/README.html)\n')
 } else if (output_format == 'latex') {
-  cat('Versión HTML (quizá más legible), [aquí](https://geofis.github.io/curso-r-qgis-2024-verano/README.html)\n')
+  cat('Versión HTML (quizá más legible), [aquí](https://geofis.github.io/curso-sig-doctorado-2024-verano/README.html)\n')
 }
 ```
 
