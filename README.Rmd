@@ -58,11 +58,11 @@ if (grepl('gfm', output_format)) {
 - Horario: 2 a 4.30 pm
 - Lugar: aula FC-101
 
-```{r out.width='50%', fig.height=6, eval=require('leaflet')}
+```{r out.width='50%', fig.height=4, eval=require('leaflet')}
 library(leaflet)
 leaflet() %>%
   addProviderTiles(providers$Esri.WorldImagery, options = providerTileOptions(maxZoom = 21)) %>%
-  leaflet::addMiniMap() %>%
+  leaflet::addMiniMap(width = 100, height = 100) %>%
   setView(lng = -69.91673, lat = 18.45952, zoom = 18) %>%
   addMarkers(lng = -69.91673, lat = 18.45952, popup = "FC-101", ) %>%
   leafem::addMouseCoordinates()
