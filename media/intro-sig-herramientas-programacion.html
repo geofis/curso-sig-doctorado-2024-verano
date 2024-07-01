@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introducción a los SIG y herramientas de programación</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="José Martínez" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Introducción a los SIG y herramientas de programación
+]
+.subtitle[
+## Curso introductorio a los Sistemas de Información Geográfica (SIG)
+]
+.author[
+### José Martínez
+]
+.institute[
+### Universidad Autónoma de Santo Domingo (UASD)
+]
+.date[
+### 2024-07-01 (updated: 2024-07-01)
+]
+
+---
+
+
+
+
+
+class: center, middle
+background-image: url(img/fondo.jpg)
+
+# Introducción a los SIG y herramientas de programación
+## Curso introductorio a los Sistemas de Información Geográfica (SIG)
+### *José Martínez*
+### Universidad Autónoma de Santo Domingo (UASD)
+#### 2024-07-01
+
+---
+
+# Introducción a los SIG
+
+## Herramientas y técnicas. "Geo-" hasta en la sopa
+
+- **Cartografía**
+- **Mapa**
+- **Sistemas de información geográfica (SIG)**
+- **Geomática**
+- **Geoprocesamiento**
+- **Geocomputación**
+- **Teledetección**
+- **Fotogrametría**
+
+---
+
+## Herramientas y técnicas. "Geo-" hasta en la sopa
+
+- **Observación de la Tierra**
+- **Tecnología geoespacial**
+- **Técnicas analíticas específicas de análisis de datos geoespaciales**
+    1. Análisis de proximidad
+    2. Análisis de superficies
+    3. Análisis de redes
+    4. __Estadísticas espaciales, análisis exploratorio de datos geoespaciales__
+    5. **Modelización espacial** (vecindad, pesos espaciales, pruebas de autocorrelación espacial, ajuste de modelos para predecir o explorar asociación)
+    6. **Interpolación y geoestadística** (técnicas de interpolación no geoestadísticas, variograma, técnicas de interpolación geoestadísticas-kriging-, predicción)
+---
+
+### Cartografía
+
+- Joly, 1988: arte de concebir, de trazar, de componer y de difundir los mapas
+
+### Mapa
+
+Joly, 1984: representación geométrica plana, simplificada y convencional, de toda la superficie terrestre o parte de ella, dentro de una relación de similitud  conveniente a la que llamamos escala
+
+---
+
+class: center, bottom
+&lt;div style="background-image: url(img/mapa-ejemplo.png); background-size: contain; background-position: center; background-repeat: no-repeat; height: 100%; width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"&gt;
+&lt;/div&gt;
+Fuente: IGU (1967)
+
+---
+
+### Sistemas de información geográfica (SIG):
+
+- Según Olaya (2020): un SIG es, fundamentalmente, una herramienta para trabajar con información georreferenciada. Hace pocos años se decía que un 70% de la información estaba georreferenciada.
+
+- Un SIG no es meramente un programa de cartografía por ordenador, ni un software de tipo CAD.
+
+---
+
+class: center, bottom
+&lt;div style="background-image: url(img/sig1.png); background-size: contain; background-position: center; background-repeat: no-repeat; height: 100%; width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"&gt;
+  Fuente: Olaya (2020)
+&lt;/div&gt;
+
+---
+
+class: center, bottom
+&lt;div style="background-image: url(img/sig2.png); background-size: contain; background-position: center; background-repeat: no-repeat; height: 100%; width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"&gt;
+  Fuente: Olaya (2020)
+&lt;/div&gt;
+
+---
+
+### Teledetección
+
+Ciencia y la técnica de **obtener información sobre objetos o áreas desde una cierta distancia**, típicamente utilizando sensores en plataformas aéreas o satelitales.
+
+### Fotogrametría
+
+Es la ciencia y técnica de obtener información precisa sobre objetos físicos y el entorno mediante el proceso de **registro, medición e interpretación de fotografías o imágenes satelitales**. Se utiliza principalmente para hacer mapas y medir la superficie terrestre y otras **características tridimensionales**.
+
+---
+
+### Observación de la Tierra (EO)
+
+El proceso amplio (abarcador) de **recopilar información sobre la superficie, las aguas y la atmósfera de la Tierra** mediante plataformas de teledetección basadas en tierra, aéreas y/o satelitales.
+
+### Tecnología geoespacial
+
+Conjunto de herramientas, técnicas y aplicaciones utilizadas para recolectar, analizar, gestionar y visualizar datos relacionados con la ubicación geográfica y las características de los objetos en la superficie terrestre. Se supone que abarca a la teledetección, los SIG, los sistemas GNSS, la cartografía propiamente. 
+
+---
+
+class: center, bottom
+background-image: url(img/GIS-evolution-and-future-trends.ppm)
+
+- Evolución de los SIG. Fuente: https://www.researchgate.net/figure/GIS-evolution-and-future-trends_fig1_282724755
+
+---
+
+class: center, bottom
+&lt;div style="background-image: url(img/13717_2020_255_Fig3_HTML.webp); background-size: contain; background-position: center; background-repeat: no-repeat; height: 100%; width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"&gt;
+  Misiones de EO de NASA. Fuente: https://ecologicalprocesses.springeropen.com/articles/10.1186/s13717-020-00255-4/figures/3
+&lt;/div&gt;
+
+---
+
+class: center, bottom
+&lt;div style="background-image: url(img/ESA-developed_Earth_observation_missions.jpg); background-size: contain; background-position: center; background-repeat: no-repeat; height: 100%; width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"&gt;
+  Misiones de EO de ESA. Fuente: https://www.esa.int/ESA_Multimedia/Images/2019/05/ESA-developed_Earth_observation_missions
+&lt;/div&gt;
+
+
+---
+
+### Historia de los Sistemas de Información Geográfica (SIG)
+
+- **1960s: Orígenes y primeros desarrollos**
+  - Roger Tomlinson desarrolla el primer SIG en Canadá, conocido como el Canada Geographic Information System (CGIS).
+  - El SIG se utiliza para gestionar datos del inventario de recursos naturales en Canadá.
+  
+- **1970s: Expansión y adopción temprana**
+  - Se desarrollan los primeros SIG comerciales, como ArcInfo por Esri.
+  - Universidades comienzan a ofrecer cursos y programas en SIG.
+  
+- **1980s: Avances tecnológicos**
+  - Desarrollo de software SIG más sofisticado y accesible, con capacidades mejoradas de análisis espacial.
+  - Integración de datos SIG con imágenes de satélite y sensores remotos.
+
+---
+
+- **1990s: Era de la digitalización**
+  - Proliferación de software SIG en PC, haciendo la tecnología más accesible a gobiernos y empresas.
+  - Desarrollo de estándares abiertos para datos SIG, facilitando el intercambio de información.
+  
+- **2000s: Internet y SIG**
+  - Emergen los SIG basados en web, permitiendo el acceso y la colaboración en línea.
+  - Google Earth y otros servicios populares democratizan el acceso a datos geoespaciales.
+
+---
+
+- **2010s: Big Data y SIG**
+  - Integración de SIG con Big Data y análisis en tiempo real.
+  - Mayor uso de SIG en aplicaciones móviles y tecnologías de localización.
+  
+- **2020s: Inteligencia Artificial y SIG**
+  - Uso creciente de inteligencia artificial y aprendizaje automático en análisis geoespacial.
+  - Expansión del uso de SIG en la gestión de ciudades inteligentes y en la respuesta a emergencias.
+  
+- **Futuro: Tendencias emergentes**
+  - Mayor integración de datos 3D y realidad aumentada en aplicaciones SIG.
+  - Expansión de la interoperabilidad y la colaboración a través de plataformas SIG abiertas y en la nube.
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+### Aplicaciones de los Sistemas de Información Geográfica (SIG)
+
+- **Gestión de Recursos Naturales**
+  - Monitoreo y conservación de la biodiversidad.
+  - Gestión forestal y agrícola.
+  - Administración de recursos hídricos.
+
+- **Planificación Urbana y Regional**
+  - Diseño y gestión de infraestructuras.
+  - Zonificación y planificación del uso del suelo.
+  - Modelación de crecimiento urbano.
+
+- **Transporte y Logística**
+  - Optimización de rutas de transporte.
+  - Gestión del tráfico y sistemas de transporte público.
+  - Planificación de infraestructuras de transporte.
+
+---
+
+- **Salud Pública**
+  - Análisis y seguimiento de brotes de enfermedades.
+  - Planificación de servicios de salud.
+  - Evaluación de factores ambientales en la salud.
+
+- **Respuesta a Emergencias**
+  - Planificación y gestión de desastres naturales.
+  - Coordinación de operaciones de emergencia.
+  - Análisis de vulnerabilidad y riesgo.
+
+- **Medio Ambiente y Cambio Climático**
+  - Monitoreo de cambios ambientales.
+  - Modelación de impactos del cambio climático.
+  - Planificación de estrategias de mitigación y adaptación.
+
+---
+
+- **Negocios y Geomarketing, marketing político**
+  - Análisis de mercado y localización de clientes.
+  - Gestión de activos y recursos empresariales.
+  - Planificación de estrategias de ventas y distribución.
+
+- **Investigación Científica**
+  - Estudios de patrones espaciales en diversas disciplinas.
+  - Integración de datos espaciales en investigaciones multidisciplinarias.
+  - Desarrollo de nuevas metodologías de análisis espacial.
+
+
+
+
+
+
+
+
+
+
+
+---
+
+# Modelos de datos geoespaciales
+
+- Tradicionalmente, usábamos la distinción entre ráster y vectorial, pero actualmente, las cosas son algo más complicadas.
+
+- De todas formas, antes de ver los datos "desde el lado de los SIG", veamos algunos conceptos básicos de sistemas de referencia.
+
+---
+
+## Sistemas y marcos de referencia, sistemas de coordenadas, datum, proyección
+
+
+---
+
+class: center, bottom
+&lt;div style="background-image: url(img/proyecciones.png); background-size: contain; background-position: center; background-repeat: no-repeat; height: 100%; width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"&gt;
+&lt;/div&gt;
+Fuente: Olaya (2020)
+
+---
+
+## ¿Cómo ver un sistema de referencia en QGIS?
+
+- En QGIS, el término elegido es "Sistema de Referencia de Coordenadas", para elegir el sistema de coordenadas. Esto incluye, de manera implícita, elegir una proyección y un Datum.
+
+- Normalmente, puedes cambiar *on-the-fly* el SRC del lienzo.
+
+- Para cambiar el SRC de una capa específica, necesitas realizar una operación a dicha capa, que forma parte de un ejercicio del curso.
+
+- Hay varias formas para acceder a la definición del SRC, pero la más sencilla es usando el botón que simula un globo en la esquina inferior derecha.
+
+- Elementos clave: ITRF, SIRGAS, WGS84, NAD27, EPSG:4326, EPSG:32619
+
+---
+
+
+# ¿Y en R?
+
+- Para definir un CRS, el argumento a prestar atención en toda función, comúnmente es `crs`.
+
+- Vectorial:
+
+  - Es habitual encontrar este argumento en funciones que utilizan objetos *simple features*, que son manejados por el paquete `sf`.
+  
+  - Comúnmente, para transformar datos, necesitamos utilizar una función para ello. En el paquete `sf`, la función es `st_transform`.
+
+- Ráster:
+
+  - En otros paquetes, como `terra` y `raster`, así como en `stars`, el sistema de referencia se puede ver al invocar nuevamente el ráster; R normalmente imprime un resumen que incluye el sistema de referencia, y si no tiene, lo suele especificar con el valor `NA`.
+  
+  - Para transformar, igualmente se debe buscar el argumento `crs` dentro de las funciones diseñadas para transformar.
+
+---
+
+## Dato geoespacial, datos en los SIG
+
+### &lt;center&gt;**"Las personas se pueden clasificar en dos tipos: las que les gustan los 'rásters' y las que les gustan los 'vectoriales'"**&lt;/center&gt;
+
+---
+class: center, bottom
+&lt;div style="background-image: url(img/capas.jpg); background-size: contain; background-position: center; background-repeat: no-repeat; height: 100%; width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"&gt;
+&lt;/div&gt;
+Fuente: Olaya (2020)
+
+---
+
+class: center, bottom
+&lt;div style="background-image: url(img/dimension-dato-geografico.jpg); background-size: contain; background-position: center; background-repeat: no-repeat; height: 100%; width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"&gt;
+&lt;/div&gt;
+Fuente: Olaya (2020)
+
+---
+
+class: center, bottom
+&lt;div style="background-image: url(img/primitivas-geometrica.jpg); background-size: contain; background-position: center; background-repeat: no-repeat; height: 100%; width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"&gt;
+&lt;/div&gt;
+Fuente: Olaya (2020)
+
+---
+
+
+class: center, bottom
+&lt;div style="background-image: url(img/representacion-raster-vectorial.jpg); background-size: contain; background-position: center; background-repeat: no-repeat; height: 100%; width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"&gt;
+&lt;/div&gt;
+Fuente: Olaya (2020)
+
+---
+
+class: center, bottom
+&lt;div style="background-image: url(img/onda-electromagnetica.jpg); background-size: contain; background-position: center; background-repeat: no-repeat; height: 100%; width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"&gt;
+&lt;/div&gt;
+Fuente: Olaya (2020)
+
+---
+
+class: center, bottom
+&lt;div style="background-image: url(img/espectro-propiedades.png); background-size: contain; background-position: center; background-repeat: no-repeat; height: 100%; width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"&gt;
+&lt;/div&gt;
+Fuente: Wikipedia
+
+---
+
+class: center, bottom
+&lt;div style="background-image: url(img/espectro.png); background-size: contain; background-position: center; background-repeat: no-repeat; height: 100%; width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"&gt;
+&lt;/div&gt;
+Fuente: Wikipedia
+
+---
+
+class: center, bottom
+&lt;div style="background-image: url(img/ventanas-atmosfericas.png); background-size: contain; background-position: center; background-repeat: no-repeat; height: 100%; width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"&gt;
+&lt;/div&gt;
+Fuente: Wikipedia
+
+---
+
+
+class: center, bottom
+&lt;div style="background-image: url(img/distintas-resoluciones.jpg); background-size: contain; background-position: center; background-repeat: no-repeat; height: 100%; width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"&gt;
+&lt;/div&gt;
+Fuente: Olaya (2020)
+
+---
+
+
+class: center, bottom
+&lt;div style="background-image: url(img/resoluciones.jpeg); background-size: contain; background-position: center; background-repeat: no-repeat; height: 100%; width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"&gt;
+&lt;/div&gt;
+
+---
+
+## Algunos ejemplos de resoluciones muy altas
+
+- Visitar: https://explore.maxar.com/30-cm-Leader.html
+
+- Visitar: https://apollomapping.com/
+
+- Visitar: https://www.skyfi.com/
+
+- Ver: https://x.com/Codie_Sanchez/status/1793274136573215191
+
+&lt;div style="text-align: center;"&gt;
+  &lt;img src="img/ejemplo-de-ia.jpg" width="50%"&gt;
+&lt;/div&gt;
+
+---
+
+class: center, bottom
+&lt;div style="background-image: url(img/gnss-diy-um980.jpg); background-size: contain; background-position: center; background-repeat: no-repeat; height: 100%; width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"&gt;
+&lt;/div&gt;
+
+---
+
+# Qué herramientas tienen QGIS y R para manejar datos ráster y vectoriales
+
+---
+
+## Bibliotecas GDAL/OGR, PROJ, GEOS
+
+- [**GDAL/OGR**](https://github.com/OSGeo/gdal): C/C++, para lectura/escritura de datos raster y vectoriales.
+- [**PROJ**](https://github.com/OSGeo/PROJ): C++, manejo de proyecciones y transformaciones cartográficas.
+- [**GEOS**](https://github.com/libgeos/geos): C/C++ operaciones espaciales, geométricas y topológicas en datos vectoriales.
+
+---
+
+class: center, bottom
+&lt;div style="background-image: url(img/repo-zonal-statistics.png); background-size: contain; background-position: center; background-repeat: no-repeat; height: 100%; width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"&gt;
+&lt;/div&gt;
+
+---
+
+## ¿Cómo se usan en R como QGIS?
+
+- **R**: los paquetes `sf`, `stars`, `raster` y `terra` utilizan GDAL/OGR, PROJ, GEOS en todas sus operaciones, especialmente el primero.
+
+- **QGIS**: Usa estas bibliotecas para cualquier operación de lectura, transformación e interoperabilidad de datos, tanto para raster como vectoriales.
+
+---
+
+# Paquetes en R
+
+- Paquete `raster`
+  - **Desarrollo y Soporte**: Paquete más antiguo.
+  - **Funcionalidad**: Lectura, escritura, manipulación y análisis de datos raster.
+  - **Limitaciones**: Manejo de grandes datos y rendimiento.
+  - **Compatibilidad**: Amplia variedad de formatos a través de GDAL.
+
+- Paquete `terra`
+  - **Desarrollo y Soporte**: Sucesor moderno de `raster`.
+  - **Funcionalidad**: Mejor manejo de grandes datos y rendimiento.
+  - **Mejoras**: Supera limitaciones de `raster`, API similar.
+  - **Compatibilidad**: Soporte GDAL.
+
+- Paquete `stars`
+  - **Desarrollo y Soporte**: Parte de tidyverse.
+  - **Funcionalidad**: Manejo de datos raster y vectoriales, sintaxis tidyverse.
+  - **Mejoras**: Datos multidimensionales (tiempo, bandas).
+  - **Compatibilidad**: Integración con tidyverse, soporte de múltiples formatos.
+
+---
+
+# Referencias destacadas
+
+Bivand, R. S., Pebesma, E., &amp; Gómez-Rubio, V. (2013). Applied Spatial Data Analysis with R. Springer New York. https://doi.org/10.1007/978-1-4614-7618-4
+
+Olaya, V. (2020). Sistemas de Información Geográfica. https://volaya.github.io/libro-sig/
+
+Lovelace, R., Nowosad, J., &amp; Muenchow, J. (2019). Geocomputation with R. Chapman and Hall/CRC. https://r.geocompx.org/
+
+Dorman, M., Graser A., Nowosad, J. &amp; Lovelace, R. (2019). Geocomputation with Python. Chapman and Hall/CRC. https://py.geocompx.org/
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

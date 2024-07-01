@@ -50,7 +50,8 @@ if (grepl('gfm', output_format)) {
 
 # Presentaciones de diapositivas incluidas en este repo:
 
-(vacío, por ahora)
+- [Introducción a los SIG y herramientas de programación](https://geofis.github.io/curso-sig-doctorado-2024-verano/media/intro-sig-herramientas-programacion.html)
+
 
 # Fecha
 
@@ -76,12 +77,18 @@ leaflet() %>%
 - Introducción a los Sistemas de Información Geográfica (SIG)
 - Historia y evolución de los SIG
 - Aplicaciones de los SIG en diversas disciplinas
-- Ejercicio práctico: interfaz gráfica de QGIS
+- Ejercicio práctico:
+  - Interfaz gráfica de QGIS
+  - Cargar una fuente ráster
+  - Cargar una fuente vectorial
 
 ### Segunda sesión (1.5 horas)
 - Introducción a R y RStudio (cuaderno RMarkdown)
 - Introducción a Python y Jupyter (cuaderno Jupyter)
-- Ejercicio práctico: configuración de cuadernos reproducibles
+- Ejercicio práctico:
+  - Iniciar en la cuenta del servidor RStudio
+  - Configuración de cuadernos reproducibles
+  - Cuaderno reproducible
 
 ## Día 2: Puntos de muestreo
 
