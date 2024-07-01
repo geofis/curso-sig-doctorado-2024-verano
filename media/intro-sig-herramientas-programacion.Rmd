@@ -446,6 +446,8 @@ class: center, bottom
   - **Mejoras**: Datos multidimensionales (tiempo, bandas).
   - **Compatibilidad**: Integración con tidyverse, soporte de múltiples formatos.
 
+---
+
 # Ejercicios
 
 - Ejercicio práctico:
@@ -458,8 +460,7 @@ class: center, bottom
   - Iniciar en la cuenta del servidor RStudio
   - Configuración de cuadernos reproducibles
   - Cuaderno reproducible
-  - [Tutorial 1(https://geofis.shinyapps.io/tutorial1/)
-
+  - [Tutorial 1](https://geofis.shinyapps.io/tutorial1/)
 
 ---
 

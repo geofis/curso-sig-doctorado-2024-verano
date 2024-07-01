@@ -59,7 +59,7 @@ if (grepl('gfm', output_format)) {
 - Horario: 2 a 4.30 pm
 - Lugar: aula FC-101
 
-```{r out.width='50%', fig.height=4, eval=require('leaflet')}
+```{r mapa, out.width='50%', fig.height=4, eval=require('leaflet')}
 library(leaflet)
 leaflet() %>%
   addProviderTiles(providers$Esri.WorldImagery, options = providerTileOptions(maxZoom = 21)) %>%
