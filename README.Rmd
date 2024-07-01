@@ -89,6 +89,7 @@ leaflet() %>%
   - Iniciar en la cuenta del servidor RStudio
   - Configuración de cuadernos reproducibles
   - Cuaderno reproducible
+  - [Tutorial 1(https://geofis.shinyapps.io/tutorial1/)
 
 ## Día 2: Puntos de muestreo
 

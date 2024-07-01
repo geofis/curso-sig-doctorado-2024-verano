@@ -446,6 +446,21 @@ class: center, bottom
   - **Mejoras**: Datos multidimensionales (tiempo, bandas).
   - **Compatibilidad**: Integración con tidyverse, soporte de múltiples formatos.
 
+# Ejercicios
+
+- Ejercicio práctico:
+  - Interfaz gráfica de QGIS
+  - Cargar una fuente ráster
+  - Cargar una fuente vectorial
+
+
+- Ejercicio práctico:
+  - Iniciar en la cuenta del servidor RStudio
+  - Configuración de cuadernos reproducibles
+  - Cuaderno reproducible
+  - [Tutorial 1(https://geofis.shinyapps.io/tutorial1/)
+
+
 ---
 
 # Referencias destacadas
