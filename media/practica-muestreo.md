@@ -15,7 +15,7 @@ Santo Domingo, República Dominicana
   coberturas del suelo.
 
 - **[Ver vídeo
-  demostrativo](https://drive.google.com/drive/u/2/folders/1i_ZO4-NLr-R0Yis5szQ7kBLYjjpklqg2)**
+  demostrativo](https://drive.google.com/file/d/1k6IotOHj6fUkyfi4rSBK6d320TY45KED/view?usp=drive_link)**
 
 ------------------------------------------------------------------------
 
