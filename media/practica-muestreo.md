@@ -47,11 +47,11 @@ teselas (cuadros) equivalentes a Sentinel-2 de 110x110 km.
 Estos son los pasos clave que debes dar para realizar un muestreo
 estratificado en tu área asignada:
 
-1.  Descarga, desde [esta ruta](media/fuentes/practica-muestreo), una
-    capa vectorial. Autoasígnate una, eligiendo un número del 1 al 25, o
-    haz que R la elija aleatoriamente con `sample(1:25, 1)`.
-    Identifícala en función del número de estudiante que hayas elegido
-    entre el 1 y el 25.
+1.  Descarga, desde [esta ruta](fuentes/practica-muestreo), una capa
+    vectorial. Autoasígnate una, eligiendo un número del 1 al 25, o haz
+    que R la elija aleatoriamente con `sample(1:25, 1)`. Identifícala en
+    función del número de estudiante que hayas elegido entre el 1 y el
+    25.
 
 2.  Carga la capa vectorial de tu área asignada en QGIS.
 
