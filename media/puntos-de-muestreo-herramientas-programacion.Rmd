@@ -115,7 +115,7 @@ Donde:
 
 - Ejercicio práctico "Diseño de muestreo espacial estratificado":
   - Muestreo espacial estratificado usando QGIS
-    - [Guía para la práctica](https://github.com/curso-sig-doctorado-2024-verano/media/practica-muestreo.md)
+    - [Guía para la práctica](https://github.com/geofis/curso-sig-doctorado-2024-verano/blob/main/media/practica-muestreo.md)
     - [Vídeo demostrativo para realizar esta práctica](https://drive.google.com/file/d/1k6IotOHj6fUkyfi4rSBK6d320TY45KED/view?usp=drive_link)
   - ¿Cómo sería en R? (pendiente)
 
