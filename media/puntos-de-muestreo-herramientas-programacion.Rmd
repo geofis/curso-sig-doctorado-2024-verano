@@ -104,23 +104,33 @@ Donde:
 
 # Ejercicios
 
-- Ejercicio práctico. QGIS, su interfaz gráficas, fuentes (REPASO):
+- [Vídeos de la sesión día 2 de julio, buscar los que comienzan por "20240702..."](https://drive.google.com/drive/folders/1HSMhHR2AeRNIFAAl0TVL2hkorP6MdV2B?usp=drive_link)
+
+- Ejercicio práctico. QGIS, su interfaz gráficas y fuentes (REPASO, ver vídeo):
+  - [Repositorio de datos fuente (ir al directorio `data`)](https://github.com/maestria-geotel-master/material-de-apoyo)
   - Interfaz gráfica de QGIS
   - Cargar una fuente ráster
   - Cargar una fuente vectorial
   - Cargar un CSV
 
 - Ejercicio práctico "Diseño de muestreo espacial estratificado":
-  - Muestreo espacial usando QGIS ([vídeo demostrativo](https://drive.google.com/drive/u/2/folders/1i_ZO4-NLr-R0Yis5szQ7kBLYjjpklqg2))
-  - ¿Cómo sería en R?
+  - Muestreo espacial estratificado usando QGIS
+    - [Guía para la práctica](practica-muestreo.md)
+    - [Vídeo demostrativo para realizar esta práctica](https://drive.google.com/file/d/1k6IotOHj6fUkyfi4rSBK6d320TY45KED/view?usp=drive_link)
+  - ¿Cómo sería en R? (pendiente)
+
+---
+
+# Ejercicios (cont.)
 
 - Ejercicio práctico. R+RStudio, reproducibilidad, tutoriales:
-  - Iniciar en la cuenta del servidor RStudio
-  - Configuración de cuadernos reproducibles
-  - Cuaderno reproducible
-  - [Tutorial 1](https://geofis.shinyapps.io/tutorial1/)
+  - Iniciar en la cuenta del servidor RStudio (credenciales enviadas por correo). Nota del Tali: sólo te pido que inicies tu sesión, para confirmar que efectivamente puedes entrar.
+  - Configuración de cuadernos reproducibles e interfaz de RStudio (pendiente). No mostré cómo hacerlo, en la próxima sesión debo acordarme de hacerlo (ToDo para el Tali).
+  - ¿Cómo se ve un cuaderno reproducible RMarkdown? ¿Qué potencial tienen los cuadernos RMarkdown? Notal del Tali: sólo hice demostración, no hay nada para practicar con los cuadernos, pero revisa el vídeo número 2 de la sesión del día 2 de julio de 2024, para que veas el potencial de esta herramienta.
+  - Realizar el [Tutorial 1](https://geofis.shinyapps.io/tutorial1/). Muy recomendado que realices este tutorial, te será de gran ayuda para introducirte a R.
 
 - **Conversemos sobre necesidades particulares**
+
 ---
 
 # Referencias destacadas

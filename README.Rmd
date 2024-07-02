@@ -61,14 +61,34 @@ if (grepl('gfm', output_format)) {
 - Horario: 2 a 4.30 pm
 - Lugar: aula FC-101
 
-```{r mapa, out.width='50%', fig.height=4, eval=require('leaflet')}
+```{r, include=F}
 library(leaflet)
-leaflet() %>%
+library(webshot2)
+library(htmlwidgets)
+map <- leaflet() %>%
   addProviderTiles(providers$Esri.WorldImagery, options = providerTileOptions(maxZoom = 21)) %>%
   leaflet::addMiniMap(width = 100, height = 100) %>%
   setView(lng = -69.91673, lat = 18.45952, zoom = 18) %>%
   addMarkers(lng = -69.91673, lat = 18.45952, popup = "FC-101", ) %>%
   leafem::addMouseCoordinates()
+```
+
+
+```{r, results='asis', echo=F}
+if (grepl('gfm', output_format)) {
+  # Guardar el mapa como HTML y luego capturar una imagen
+  saveWidget(map, "temp_map.html", selfcontained = TRUE)
+  webshot("temp_map.html", file = "map.png", vwidth = 600, vheight = 400, cliprect = "viewport")
+  cat("![Mapa](map.png)")
+  invisible(file.remove('temp_map.html'))
+}
+```
+
+
+```{r mapa, out.width='50%', fig.height=4, echo=F}
+if (grepl('html', output_format)) {
+  map
+}
 ```
 
 # Programa
