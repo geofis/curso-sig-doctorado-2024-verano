@@ -52,6 +52,8 @@ if (grepl('gfm', output_format)) {
 
 - [Introducción a los SIG y herramientas de programación](https://geofis.github.io/curso-sig-doctorado-2024-verano/media/intro-sig-herramientas-programacion.html)
 
+- [Puntos de muestreo, herramientas de programación](https://geofis.github.io/curso-sig-doctorado-2024-verano/media/puntos-de-muestreo-herramientas-programacion.html)
+
 
 # Fecha
 

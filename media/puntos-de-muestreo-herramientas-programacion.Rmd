@@ -1,0 +1,134 @@
+---
+title: "Puntos de muestreo, herramientas de programación"
+subtitle: "Curso introductorio a los Sistemas de Información Geográfica (SIG)"
+author: "José Martínez"
+institute: "Universidad Autónoma de Santo Domingo (UASD)"
+date: "2024-07-01 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: center, middle
+background-image: url(img/fondo.jpg)
+
+# Puntos de muestreo, herramientas de programación
+## Curso introductorio a los Sistemas de Información Geográfica (SIG)
+### *José Martínez*
+### Universidad Autónoma de Santo Domingo (UASD)
+#### 2024-07-01
+
+---
+
+# Muestreo Espacial
+
+## Definición
+El muestreo espacial se refiere a la selección de ubicaciones geográficas para la recolección de datos con el objetivo de hacer inferencias sobre un área más grande.
+
+## Importancia
+- Permite la estimación de variables ambientales y geográficas.
+- Optimiza la recolección de datos, reduciendo costos y tiempo.
+
+---
+
+# Tipos de Muestreo Espacial
+
+1. **Muestreo Aleatorio Simple**
+   - Selección de puntos al azar dentro del área de interés.
+2. **Muestreo Sistemático**
+   - Puntos seleccionados en una cuadrícula regular.
+3. **Muestreo Estratificado**
+   - División del área en estratos homogéneos y muestreo dentro de cada estrato.
+4. **Muestreo Adaptativo**
+   - Mayor densidad de muestreo en áreas con mayor variabilidad.
+
+\begin{equation}
+n = \frac{N}{1 + Ne^2}
+\end{equation}
+
+Donde:
+- $n$ = tamaño de muestra
+- $N$ = población total
+- $e$ = margen de error
+
+---
+
+# Muestreo Espacial Estratificado
+
+## Concepto
+- Dividir el área de estudio en estratos (sub-áreas) basados en una característica clave.
+- Muestrear cada estrato de manera independiente.
+
+## Ventajas
+- Mayor precisión en la estimación de variables.
+- Reducción de sesgos.
+
+\begin{equation}
+n_h = \frac{N_h}{N} \cdot n
+\end{equation}
+
+Donde:
+- $n_h$ = tamaño de muestra en el estrato $h$; $N_h$ = tamaño del estrato $h$
+- $N$ = tamaño total de la población; $n$ = tamaño total de la muestra
+
+---
+
+# Fórmulas Clave en Muestreo Espacial
+
+## Media Estratificada
+
+\begin{equation}
+\bar{X} = \sum_{h=1}^L \left( \frac{N_h}{N} \cdot \bar{X}_h \right)
+\end{equation}
+
+## Varianza Estratificada
+\begin{equation}
+S^2 = \sum_{h=1}^L \left( \frac{N_h^2}{N^2} \cdot S_h^2 \right)
+\end{equation}
+
+Donde:
+- $\bar{X}$ = media estratificada; $S^2$ = varianza estratificada
+- $L$ = número de estratos; $\bar{X}_h$ = media del estrato $h$
+- $S_h^2$ = varianza del estrato $h$
+
+---
+
+# Ejercicios
+
+- Ejercicio práctico. QGIS, su interfaz gráficas, fuentes (REPASO):
+  - Interfaz gráfica de QGIS
+  - Cargar una fuente ráster
+  - Cargar una fuente vectorial
+  - Cargar un CSV
+
+- Ejercicio práctico "Diseño de muestreo espacial estratificado":
+  - Muestreo espacial usando QGIS ([vídeo demostrativo](https://drive.google.com/drive/u/2/folders/1i_ZO4-NLr-R0Yis5szQ7kBLYjjpklqg2))
+  - ¿Cómo sería en R?
+
+- Ejercicio práctico. R+RStudio, reproducibilidad, tutoriales:
+  - Iniciar en la cuenta del servidor RStudio
+  - Configuración de cuadernos reproducibles
+  - Cuaderno reproducible
+  - [Tutorial 1](https://geofis.shinyapps.io/tutorial1/)
+
+- **Conversemos sobre necesidades particulares**
+---
+
+# Referencias destacadas
+
+Bivand, R. S., Pebesma, E., & Gómez-Rubio, V. (2013). Applied Spatial Data Analysis with R. Springer New York. https://doi.org/10.1007/978-1-4614-7618-4
+
+Olaya, V. (2020). Sistemas de Información Geográfica. https://volaya.github.io/libro-sig/
+
+Lovelace, R., Nowosad, J., & Muenchow, J. (2019). Geocomputation with R. Chapman and Hall/CRC. https://r.geocompx.org/
+
+Dorman, M., Graser A., Nowosad, J. & Lovelace, R. (2019). Geocomputation with Python. Chapman and Hall/CRC. https://py.geocompx.org/

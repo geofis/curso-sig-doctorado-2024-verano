@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Puntos de muestreo, herramientas de programación</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="José Martínez" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Puntos de muestreo, herramientas de programación
+]
+.subtitle[
+## Curso introductorio a los Sistemas de Información Geográfica (SIG)
+]
+.author[
+### José Martínez
+]
+.institute[
+### Universidad Autónoma de Santo Domingo (UASD)
+]
+.date[
+### 2024-07-01 (updated: 2024-07-02)
+]
+
+---
+
+
+
+
+
+class: center, middle
+background-image: url(img/fondo.jpg)
+
+# Puntos de muestreo, herramientas de programación
+## Curso introductorio a los Sistemas de Información Geográfica (SIG)
+### *José Martínez*
+### Universidad Autónoma de Santo Domingo (UASD)
+#### 2024-07-01
+
+---
+
+# Muestreo Espacial
+
+## Definición
+El muestreo espacial se refiere a la selección de ubicaciones geográficas para la recolección de datos con el objetivo de hacer inferencias sobre un área más grande.
+
+## Importancia
+- Permite la estimación de variables ambientales y geográficas.
+- Optimiza la recolección de datos, reduciendo costos y tiempo.
+
+---
+
+# Tipos de Muestreo Espacial
+
+1. **Muestreo Aleatorio Simple**
+   - Selección de puntos al azar dentro del área de interés.
+2. **Muestreo Sistemático**
+   - Puntos seleccionados en una cuadrícula regular.
+3. **Muestreo Estratificado**
+   - División del área en estratos homogéneos y muestreo dentro de cada estrato.
+4. **Muestreo Adaptativo**
+   - Mayor densidad de muestreo en áreas con mayor variabilidad.
+
+`\begin{equation}
+n = \frac{N}{1 + Ne^2}
+\end{equation}`
+
+Donde:
+- `\(n\)` = tamaño de muestra
+- `\(N\)` = población total
+- `\(e\)` = margen de error
+
+---
+
+# Muestreo Espacial Estratificado
+
+## Concepto
+- Dividir el área de estudio en estratos (sub-áreas) basados en una característica clave.
+- Muestrear cada estrato de manera independiente.
+
+## Ventajas
+- Mayor precisión en la estimación de variables.
+- Reducción de sesgos.
+
+`\begin{equation}
+n_h = \frac{N_h}{N} \cdot n
+\end{equation}`
+
+Donde:
+- `\(n_h\)` = tamaño de muestra en el estrato `\(h\)`; `\(N_h\)` = tamaño del estrato `\(h\)`
+- `\(N\)` = tamaño total de la población; `\(n\)` = tamaño total de la muestra
+
+---
+
+# Fórmulas Clave en Muestreo Espacial
+
+## Media Estratificada
+
+`\begin{equation}
+\bar{X} = \sum_{h=1}^L \left( \frac{N_h}{N} \cdot \bar{X}_h \right)
+\end{equation}`
+
+## Varianza Estratificada
+`\begin{equation}
+S^2 = \sum_{h=1}^L \left( \frac{N_h^2}{N^2} \cdot S_h^2 \right)
+\end{equation}`
+
+Donde:
+- `\(\bar{X}\)` = media estratificada; `\(S^2\)` = varianza estratificada
+- `\(L\)` = número de estratos; `\(\bar{X}_h\)` = media del estrato `\(h\)`
+- `\(S_h^2\)` = varianza del estrato `\(h\)`
+
+---
+
+# Ejercicios
+
+- Ejercicio práctico. QGIS, su interfaz gráficas, fuentes (REPASO):
+  - Interfaz gráfica de QGIS
+  - Cargar una fuente ráster
+  - Cargar una fuente vectorial
+  - Cargar un CSV
+
+- Ejercicio práctico "Diseño de muestreo espacial estratificado":
+  - Muestreo espacial usando QGIS ([vídeo demostrativo](https://drive.google.com/drive/u/2/folders/1i_ZO4-NLr-R0Yis5szQ7kBLYjjpklqg2))
+  - ¿Cómo sería en R?
+
+- Ejercicio práctico. R+RStudio, reproducibilidad, tutoriales:
+  - Iniciar en la cuenta del servidor RStudio
+  - Configuración de cuadernos reproducibles
+  - Cuaderno reproducible
+  - [Tutorial 1](https://geofis.shinyapps.io/tutorial1/)
+
+- **Conversemos sobre necesidades particulares**
+---
+
+# Referencias destacadas
+
+Bivand, R. S., Pebesma, E., &amp; Gómez-Rubio, V. (2013). Applied Spatial Data Analysis with R. Springer New York. https://doi.org/10.1007/978-1-4614-7618-4
+
+Olaya, V. (2020). Sistemas de Información Geográfica. https://volaya.github.io/libro-sig/
+
+Lovelace, R., Nowosad, J., &amp; Muenchow, J. (2019). Geocomputation with R. Chapman and Hall/CRC. https://r.geocompx.org/
+
+Dorman, M., Graser A., Nowosad, J. &amp; Lovelace, R. (2019). Geocomputation with Python. Chapman and Hall/CRC. https://py.geocompx.org/
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
