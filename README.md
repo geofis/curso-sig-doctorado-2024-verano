@@ -7,7 +7,8 @@ Versión HTML (más legible e interactiva),
 
 # Presentaciones de diapositivas incluidas en este repo:
 
-(vacío, por ahora)
+- [Introducción a los SIG y herramientas de
+  programación](https://geofis.github.io/curso-sig-doctorado-2024-verano/media/intro-sig-herramientas-programacion.html)
 
 # Fecha
 
@@ -19,13 +20,13 @@ Versión HTML (más legible e interactiva),
 library(leaflet)
 leaflet() %>%
   addProviderTiles(providers$Esri.WorldImagery, options = providerTileOptions(maxZoom = 21)) %>%
-  leaflet::addMiniMap() %>%
+  leaflet::addMiniMap(width = 100, height = 100) %>%
   setView(lng = -69.91673, lat = 18.45952, zoom = 18) %>%
   addMarkers(lng = -69.91673, lat = 18.45952, popup = "FC-101", ) %>%
   leafem::addMouseCoordinates()
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-3-1.jpeg" width="50%" />
+<img src="README_files/figure-gfm/mapa-1.jpeg" width="50%" />
 
 # Programa
 
@@ -36,13 +37,20 @@ leaflet() %>%
 - Introducción a los Sistemas de Información Geográfica (SIG)
 - Historia y evolución de los SIG
 - Aplicaciones de los SIG en diversas disciplinas
-- Ejercicio práctico: interfaz gráfica de QGIS
+- Ejercicio práctico:
+  - Interfaz gráfica de QGIS
+  - Cargar una fuente ráster
+  - Cargar una fuente vectorial
 
 ### Segunda sesión (1.5 horas)
 
 - Introducción a R y RStudio (cuaderno RMarkdown)
 - Introducción a Python y Jupyter (cuaderno Jupyter)
-- Ejercicio práctico: configuración de cuadernos reproducibles
+- Ejercicio práctico:
+  - Iniciar en la cuenta del servidor RStudio
+  - Configuración de cuadernos reproducibles
+  - Cuaderno reproducible
+  - \[Tutorial 1(<https://geofis.shinyapps.io/tutorial1/>)
 
 ## Día 2: Puntos de muestreo
 
@@ -106,8 +114,8 @@ leaflet() %>%
   obtener estas fuentes, pero últimamente recomiendo apuntar primero al
   Google Earth Engine.
 - **Lecturas:** Las que deseen traer; son bienvenidos artículos
-  introductorios y tutoriales en línea sobre QGIS, R, RStudio, Jupyter y
-  Google Earth Engine.
+  introductorios y tutoriales en línea sobre QGIS, R y Python para
+  geociencias, y Google Earth Engine.
 
 # Referencias destacadas
 
