@@ -54,7 +54,7 @@ if (grepl('gfm', output_format)) {
 
 - [Puntos de muestreo, herramientas de programación](https://geofis.github.io/curso-sig-doctorado-2024-verano/media/puntos-de-muestreo-herramientas-programacion.html)
 
-- [Fuentes de imágenes satelitales orientado al análisis de uso de suelo](https://geofis.github.io/curso-sig-doctorado-2024-verano/media/fuentes-imagenes-satelitales-uso-suelo.html.html)
+- [Fuentes de imágenes satelitales orientado al análisis de uso de suelo](https://geofis.github.io/curso-sig-doctorado-2024-verano/media/fuentes-imagenes-satelitales-uso-suelo.html)
 
 # Fecha
 

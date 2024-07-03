@@ -14,7 +14,7 @@ Versión HTML (más legible e interactiva),
   programación](https://geofis.github.io/curso-sig-doctorado-2024-verano/media/puntos-de-muestreo-herramientas-programacion.html)
 
 - [Fuentes de imágenes satelitales orientado al análisis de uso de
-  suelo](https://geofis.github.io/curso-sig-doctorado-2024-verano/media/fuentes-imagenes-satelitales-uso-suelo.html.html)
+  suelo](https://geofis.github.io/curso-sig-doctorado-2024-verano/media/fuentes-imagenes-satelitales-uso-suelo.html)
 
 # Fecha
 
