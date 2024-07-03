@@ -1,0 +1,193 @@
+---
+title: "Fuentes de imágenes satelitales orientado al análisis de uso de suelo"
+subtitle: "Curso introductorio a los Sistemas de Información Geográfica (SIG)"
+author: "José Martínez"
+institute: "Universidad Autónoma de Santo Domingo (UASD)"
+date: "2024-07-01 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: center, middle
+background-image: url(img/fondo.jpg)
+
+# Fuentes de imágenes satelitales orientado al análisis de uso de suelo
+## Curso introductorio a los Sistemas de Información Geográfica (SIG)
+### *José Martínez*
+### Universidad Autónoma de Santo Domingo (UASD)
+#### 2024-07-03
+
+
+---
+
+# Cuando te toque...
+
+## Pide ayuda al ChatGPT
+
+Desde la siguiente diapositiva en adelante, verás varios ejercicios de aula. Este es un buen momento para que uses el ChatGPT. Pregúntale cómo hacerlo. Para interactuar con dicha herramienta en el contexto de nuestro tema, te recomiendo lo siguiente:
+
+- Concisión. 
+
+- Agilidad. No pierdas tiempo intentando conseguir la mejor ortografía ni la mejor redacción. Las palabras clave, y un "cierto orden", son más importantes. 
+
+- Precisión en lo que se pregunta.
+
+- Mejor dar órdenes.
+
+- Truco: pídele que te documente código informático, que te lo explique.
+
+---
+
+
+# ¿Dónde encontrar fuentes satelitales (y otras)?
+
+- Busca primero en el catálogo de Google Earth Engine: https://earthengine.google.com/
+- Copernicus Data Space Ecosystem, Copernicus Browser: https://dataspace.copernicus.eu
+- Sentinel Hub: https://www.sentinel-hub.com/
+- USGS Earth Explorer: https://earthexplorer.usgs.gov/
+- NASA Earthdata: https://earthdata.nasa.gov/
+- Alaska Satellite Facility Vertex: https://vertex.daac.asf.alaska.edu/
+- Planet Labs: https://www.planet.com/
+- LandsatLook Viewer: https://landsatlook.usgs.gov/
+- JAXA G-Portal (Japan Aerospace Exploration Agency): https://gportal.jaxa.jp/gpr/
+
+---
+
+# ¿Dónde encontrar fuentes satelitales (y otros tipos de datos)?
+
+- Maxar: https://www.maxar.com/
+- Copernicus Open Access Hub (está programado para retiro): https://scihub.copernicus.eu/
+- OpenAerialMap: https://openaerialmap.org/
+- TerraSAR-X/TanDEM-X: https://tandemx-science.dlr.de/
+- Open Topography: https://opentopography.org/
+- CHELSA, datos climáticos de alta resolución: https://chelsa-climate.org/
+- WorlClim, mapas, gráficos, tablas y datos en general sobre el clima global:  https://worldclim.org/
+
+---
+
+## Copernicus Data Space Ecosystem
+
+![](img/ndci-copernicus-dataspace-ecosystem-copernicus-browser.jpg)
+NDCI a través del Copernicus Browser https://dataspace.copernicus.eu
+
+---
+
+## Sentinel Hub
+
+
+![](img/ndci-sentinel-hub.jpg)
+NDCI a través del EO Browser https://apps.sentinel-hub.com/eo-browser/
+
+---
+
+## Google EarthEngine a través del frontend de JavaScript (la aplicación web)
+
+---
+
+## Google EarthEngine a través de cuaderno Jupyter con `ee` y `geemap`
+
+
+---
+
+# R + RStudio
+
+- Primero lo primero (es importante, me gasto una diapo y todo en esto), cuando accedas a tu cuenta en el servidor RStudio, configura lo siguiente:
+  - Menú Tools>Global Options>R General>Workspace, desmarca `Restore .RData into workspace at startup:`, y en la opción `Save workspace to .RData on exit:` elige `Never`.
+  - Presiona `OK`.
+  
+      <img src="img/configuracion-rstudio-importante.jpg" style="width: 50%" />
+      
+  - "Yo podía hacerlo por ti, pero preferí que lo hicieras tú, dado que para garantizar la reproducibilidad de análisis, este paso es importante". Firmado: tu administrador del servidor de programación.
+
+---
+
+- Segundo lo segundo. Por varias razones, es preferible que el código de un cuaderno RMarkdown se ejecute en la consola. Para que esto se logre en cada cuaderno nuevo RMarkdown, configura RStudio de la siguiente manera.
+
+    - Ve a menú `Tools>Global Options`.
+    
+    - En el diálogo, ve a la pestaña `RMarkdown` (color morado).
+    
+    - **Desmarca** la opción `Show output inline for all RMarkdown documents`.
+    
+    <img src="img/configuracion-rstudio-importante-2.jpg" style="width: 50%" />
+    
+    - Presiona `OK`.
+
+
+---
+
+## Realiza el tutorial1: https://geofis.shinyapps.io/tutorial1/
+
+Si aún no lo has realizado, te animo a que visites dicho tutorial y lo practiques íntegramente, porque te servirá para resolver las siguientes cuestiones básicas:
+
+- Las teclas básicas de la sintaxis en R (y en muchos otros lenguajes de programación)
+
+- Cómo pedir ayuda a R (aunque esto el ChatGPT lo hace mejor).
+
+- Los objetos básicos en R: vectores, matrices, factores, listas, `data.frames`.
+
+---
+
+## Clonar un repo como proyecto en R
+
+Uno de los problemas más comunes que enfrentarás al momento de cargar fuentes en R (y en otros lenguajes) es definir la ruta de tus archivos. Mi recomendación en este sentido es: __abre el repositorio de datos como un proyecto de RStudio__.
+
+Para hacerlo, sigue estas instrucciones.
+
+---
+
+### Instrucciones para clonar el repositorio `material-de-apoyo` y abrirlo como proyecto de RStudio
+
+- Ve al menú `File>New project...`.
+- En el diálogo, presiona `Version Control`. Esto hará que avances a la siguiente ventana.
+- Presiona `Git`. Esto hará que avances a la siguiente ventana.
+- En la caja `Repository URL`, pega esto: `https://github.com/maestria-geotel-master/material-de-apoyo.git`
+- Presiona `Create Project`. Esto "clonará" el repo `material-de-apoyo` y lo abrirá como un proyecto del mismo nombre en RStudio.
+- La ventaja de hacerlo de esta manera, es que trabajarás dentro de un proyecto de R, donde (con suerte) no tendrás problemas para encontrar tus archivos.
+
+---
+
+
+## Cuadernos RMarkdown
+
+Para que tus análisis sean reproducibles, y queden acumulados en un único lugar, te recomiendo que crees un cuaderno RMarkdown, en el que escribirás bloques de texto y bloques de código. Los bloques de código los podrás ejecutar directamente en la consola, facilitándote el trabajo de análisis. Adicionalmente, podrás "tejer" (compilar) un documento con todos tus análisis, donde podrás ver tanto el código que usaste, como las salidas de cada bloque.
+
+- Asegúrate de que tienes tu proyecto abierto. Si realizaste el ejercicio anterior exitosamente, el proyecto debería estar abierto. De todas formas, para asegurarte de que tu proyecto está abierto, fíjate si en la parte superior derecha de la ventana de RStudio, a la derecha de un ícono que simula un cubo azul, aparece el nombre `material-de-apoyo`. En caso contrario, es probable que el proyecto no esté abierto. Si lograste clonar el repo, pero el proyecto está cerrado, mediante la pestaña `Files`, entra al directorio `material-de-apoyo` y haz clic al archivo `material-de-apoyo.Rproj`. Te preguntará si quieres abrir el proyecto, di que sí. Si no tienes el directorio `material-de-apoyo`, entonces tendrás que ejecutar el ejercicio -1.
+
+- Ve a `File>New>R Markdown`.
+
+- Estando en la pestaña `Document` selecciona `HTML`.
+
+- Presiona `OK`.
+
+---
+
+# Ejercicios
+
+- "Descargar", visualizar y apilar una escena Landsat 8-9 con QGIS. Abrir Drive de archivos del curso, y entrar en el directorio `datos/ejercicios-dia-3/landsat8-recortada`
+
+- Análisis de ráster categórico de uso y cobertura del suelo (ya clasificado) con QGIS. Abrir Drive de archivos del curso, y entrar en el directorio `datos/ejercicios-dia-3/mapa-uso-y-cobertura-diarena-2012`
+
+- Análisis de ráster categórico de uso y cobertura del suelo (ya clasificado) con R.
+
+---
+
+# Referencias destacadas
+
+Bivand, R. S., Pebesma, E., & Gómez-Rubio, V. (2013). Applied Spatial Data Analysis with R. Springer New York. https://doi.org/10.1007/978-1-4614-7618-4
+
+Olaya, V. (2020). Sistemas de Información Geográfica. https://volaya.github.io/libro-sig/
+
+Lovelace, R., Nowosad, J., & Muenchow, J. (2019). Geocomputation with R. Chapman and Hall/CRC. https://r.geocompx.org/
+
+Dorman, M., Graser A., Nowosad, J. & Lovelace, R. (2019). Geocomputation with Python. Chapman and Hall/CRC. https://py.geocompx.org/

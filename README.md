@@ -13,6 +13,9 @@ Versión HTML (más legible e interactiva),
 - [Puntos de muestreo, herramientas de
   programación](https://geofis.github.io/curso-sig-doctorado-2024-verano/media/puntos-de-muestreo-herramientas-programacion.html)
 
+- [Fuentes de imágenes satelitales orientado al análisis de uso de
+  suelo](https://geofis.github.io/curso-sig-doctorado-2024-verano/media/fuentes-imagenes-satelitales-uso-suelo.html.html)
+
 # Fecha
 
 - Días: 1 al 4 de julio, 2024
@@ -46,7 +49,7 @@ Versión HTML (más legible e interactiva),
   - Iniciar en la cuenta del servidor RStudio
   - Configuración de cuadernos reproducibles
   - Cuaderno reproducible
-  - \[Tutorial 1(<https://geofis.shinyapps.io/tutorial1/>)
+  - [Tutorial 1](https://geofis.shinyapps.io/tutorial1/)
 
 ## Día 2: Puntos de muestreo
 

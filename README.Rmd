@@ -54,6 +54,7 @@ if (grepl('gfm', output_format)) {
 
 - [Puntos de muestreo, herramientas de programación](https://geofis.github.io/curso-sig-doctorado-2024-verano/media/puntos-de-muestreo-herramientas-programacion.html)
 
+- [Fuentes de imágenes satelitales orientado al análisis de uso de suelo](https://geofis.github.io/curso-sig-doctorado-2024-verano/media/fuentes-imagenes-satelitales-uso-suelo.html.html)
 
 # Fecha
 
@@ -77,10 +78,10 @@ map <- leaflet() %>%
 ```{r, results='asis', echo=F}
 if (grepl('gfm', output_format)) {
   # Guardar el mapa como HTML y luego capturar una imagen
-  saveWidget(map, "temp_map.html", selfcontained = TRUE)
-  webshot("temp_map.html", file = "map.png", vwidth = 600, vheight = 400, cliprect = "viewport")
+  # saveWidget(map, "temp_map.html", selfcontained = TRUE)
+  # webshot("temp_map.html", file = "map.png", vwidth = 600, vheight = 400, cliprect = "viewport")
   cat("![Mapa](map.png)")
-  invisible(file.remove('temp_map.html'))
+  # invisible(file.remove('temp_map.html'))
 }
 ```
 
@@ -111,7 +112,7 @@ if (grepl('html', output_format)) {
   - Iniciar en la cuenta del servidor RStudio
   - Configuración de cuadernos reproducibles
   - Cuaderno reproducible
-  - [Tutorial 1(https://geofis.shinyapps.io/tutorial1/)
+  - [Tutorial 1](https://geofis.shinyapps.io/tutorial1/)
 
 ## Día 2: Puntos de muestreo
 

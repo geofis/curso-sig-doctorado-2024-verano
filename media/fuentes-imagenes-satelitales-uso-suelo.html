@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Fuentes de imágenes satelitales orientado al análisis de uso de suelo</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="José Martínez" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Fuentes de imágenes satelitales orientado al análisis de uso de suelo
+]
+.subtitle[
+## Curso introductorio a los Sistemas de Información Geográfica (SIG)
+]
+.author[
+### José Martínez
+]
+.institute[
+### Universidad Autónoma de Santo Domingo (UASD)
+]
+.date[
+### 2024-07-01 (updated: 2024-07-03)
+]
+
+---
+
+
+
+
+
+class: center, middle
+background-image: url(img/fondo.jpg)
+
+# Fuentes de imágenes satelitales orientado al análisis de uso de suelo
+## Curso introductorio a los Sistemas de Información Geográfica (SIG)
+### *José Martínez*
+### Universidad Autónoma de Santo Domingo (UASD)
+#### 2024-07-03
+
+
+---
+
+# Cuando te toque...
+
+## Pide ayuda al ChatGPT
+
+Desde la siguiente diapositiva en adelante, verás varios ejercicios de aula. Este es un buen momento para que uses el ChatGPT. Pregúntale cómo hacerlo. Para interactuar con dicha herramienta en el contexto de nuestro tema, te recomiendo lo siguiente:
+
+- Concisión. 
+
+- Agilidad. No pierdas tiempo intentando conseguir la mejor ortografía ni la mejor redacción. Las palabras clave, y un "cierto orden", son más importantes. 
+
+- Precisión en lo que se pregunta.
+
+- Mejor dar órdenes.
+
+- Truco: pídele que te documente código informático, que te lo explique.
+
+---
+
+
+# ¿Dónde encontrar fuentes satelitales (y otras)?
+
+- Busca primero en el catálogo de Google Earth Engine: https://earthengine.google.com/
+- Copernicus Data Space Ecosystem, Copernicus Browser: https://dataspace.copernicus.eu
+- Sentinel Hub: https://www.sentinel-hub.com/
+- USGS Earth Explorer: https://earthexplorer.usgs.gov/
+- NASA Earthdata: https://earthdata.nasa.gov/
+- Alaska Satellite Facility Vertex: https://vertex.daac.asf.alaska.edu/
+- Planet Labs: https://www.planet.com/
+- LandsatLook Viewer: https://landsatlook.usgs.gov/
+- JAXA G-Portal (Japan Aerospace Exploration Agency): https://gportal.jaxa.jp/gpr/
+
+---
+
+# ¿Dónde encontrar fuentes satelitales (y otros tipos de datos)?
+
+- Maxar: https://www.maxar.com/
+- Copernicus Open Access Hub (está programado para retiro): https://scihub.copernicus.eu/
+- OpenAerialMap: https://openaerialmap.org/
+- TerraSAR-X/TanDEM-X: https://tandemx-science.dlr.de/
+- Open Topography: https://opentopography.org/
+- CHELSA, datos climáticos de alta resolución: https://chelsa-climate.org/
+- WorlClim, mapas, gráficos, tablas y datos en general sobre el clima global:  https://worldclim.org/
+
+---
+
+## Copernicus Data Space Ecosystem
+
+![](img/ndci-copernicus-dataspace-ecosystem-copernicus-browser.jpg)
+NDCI a través del Copernicus Browser https://dataspace.copernicus.eu
+
+---
+
+## Sentinel Hub
+
+
+![](img/ndci-sentinel-hub.jpg)
+NDCI a través del EO Browser https://apps.sentinel-hub.com/eo-browser/
+
+---
+
+## Google EarthEngine a través del frontend de JavaScript (la aplicación web)
+
+---
+
+## Google EarthEngine a través de cuaderno Jupyter con `ee` y `geemap`
+
+
+---
+
+# R + RStudio
+
+- Primero lo primero (es importante, me gasto una diapo y todo en esto), cuando accedas a tu cuenta en el servidor RStudio, configura lo siguiente:
+  - Menú Tools&gt;Global Options&gt;R General&gt;Workspace, desmarca `Restore .RData into workspace at startup:`, y en la opción `Save workspace to .RData on exit:` elige `Never`.
+  - Presiona `OK`.
+  
+      &lt;img src="img/configuracion-rstudio-importante.jpg" style="width: 50%" /&gt;
+      
+  - "Yo podía hacerlo por ti, pero preferí que lo hicieras tú, dado que para garantizar la reproducibilidad de análisis, este paso es importante". Firmado: tu administrador del servidor de programación.
+
+---
+
+- Segundo lo segundo. Por varias razones, es preferible que el código de un cuaderno RMarkdown se ejecute en la consola. Para que esto se logre en cada cuaderno nuevo RMarkdown, configura RStudio de la siguiente manera.
+
+    - Ve a menú `Tools&gt;Global Options`.
+    
+    - En el diálogo, ve a la pestaña `RMarkdown` (color morado).
+    
+    - **Desmarca** la opción `Show output inline for all RMarkdown documents`.
+    
+    &lt;img src="img/configuracion-rstudio-importante-2.jpg" style="width: 50%" /&gt;
+    
+    - Presiona `OK`.
+
+
+---
+
+## Realiza el tutorial1: https://geofis.shinyapps.io/tutorial1/
+
+Si aún no lo has realizado, te animo a que visites dicho tutorial y lo practiques íntegramente, porque te servirá para resolver las siguientes cuestiones básicas:
+
+- Las teclas básicas de la sintaxis en R (y en muchos otros lenguajes de programación)
+
+- Cómo pedir ayuda a R (aunque esto el ChatGPT lo hace mejor).
+
+- Los objetos básicos en R: vectores, matrices, factores, listas, `data.frames`.
+
+---
+
+## Clonar un repo como proyecto en R
+
+Uno de los problemas más comunes que enfrentarás al momento de cargar fuentes en R (y en otros lenguajes) es definir la ruta de tus archivos. Mi recomendación en este sentido es: __abre el repositorio de datos como un proyecto de RStudio__.
+
+Para hacerlo, sigue estas instrucciones.
+
+---
+
+### Instrucciones para clonar el repositorio `material-de-apoyo` y abrirlo como proyecto de RStudio
+
+- Ve al menú `File&gt;New project...`.
+- En el diálogo, presiona `Version Control`. Esto hará que avances a la siguiente ventana.
+- Presiona `Git`. Esto hará que avances a la siguiente ventana.
+- En la caja `Repository URL`, pega esto: `https://github.com/maestria-geotel-master/material-de-apoyo.git`
+- Presiona `Create Project`. Esto "clonará" el repo `material-de-apoyo` y lo abrirá como un proyecto del mismo nombre en RStudio.
+- La ventaja de hacerlo de esta manera, es que trabajarás dentro de un proyecto de R, donde (con suerte) no tendrás problemas para encontrar tus archivos.
+
+---
+
+
+## Cuadernos RMarkdown
+
+Para que tus análisis sean reproducibles, y queden acumulados en un único lugar, te recomiendo que crees un cuaderno RMarkdown, en el que escribirás bloques de texto y bloques de código. Los bloques de código los podrás ejecutar directamente en la consola, facilitándote el trabajo de análisis. Adicionalmente, podrás "tejer" (compilar) un documento con todos tus análisis, donde podrás ver tanto el código que usaste, como las salidas de cada bloque.
+
+- Asegúrate de que tienes tu proyecto abierto. Si realizaste el ejercicio anterior exitosamente, el proyecto debería estar abierto. De todas formas, para asegurarte de que tu proyecto está abierto, fíjate si en la parte superior derecha de la ventana de RStudio, a la derecha de un ícono que simula un cubo azul, aparece el nombre `material-de-apoyo`. En caso contrario, es probable que el proyecto no esté abierto. Si lograste clonar el repo, pero el proyecto está cerrado, mediante la pestaña `Files`, entra al directorio `material-de-apoyo` y haz clic al archivo `material-de-apoyo.Rproj`. Te preguntará si quieres abrir el proyecto, di que sí. Si no tienes el directorio `material-de-apoyo`, entonces tendrás que ejecutar el ejercicio -1.
+
+- Ve a `File&gt;New&gt;R Markdown`.
+
+- Estando en la pestaña `Document` selecciona `HTML`.
+
+- Presiona `OK`.
+
+---
+
+# Ejercicios
+
+- "Descargar", visualizar y apilar una escena Landsat 8-9 con QGIS. Abrir Drive de archivos del curso, y entrar en el directorio `datos/ejercicios-dia-3/landsat8-recortada`
+
+- Análisis de ráster categórico de uso y cobertura del suelo (ya clasificado) con QGIS. Abrir Drive de archivos del curso, y entrar en el directorio `datos/ejercicios-dia-3/mapa-uso-y-cobertura-diarena-2012`
+
+- Análisis de ráster categórico de uso y cobertura del suelo (ya clasificado) con R.
+
+---
+
+# Referencias destacadas
+
+Bivand, R. S., Pebesma, E., &amp; Gómez-Rubio, V. (2013). Applied Spatial Data Analysis with R. Springer New York. https://doi.org/10.1007/978-1-4614-7618-4
+
+Olaya, V. (2020). Sistemas de Información Geográfica. https://volaya.github.io/libro-sig/
+
+Lovelace, R., Nowosad, J., &amp; Muenchow, J. (2019). Geocomputation with R. Chapman and Hall/CRC. https://r.geocompx.org/
+
+Dorman, M., Graser A., Nowosad, J. &amp; Lovelace, R. (2019). Geocomputation with Python. Chapman and Hall/CRC. https://py.geocompx.org/
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
