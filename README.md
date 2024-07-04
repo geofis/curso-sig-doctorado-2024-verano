@@ -16,6 +16,9 @@ Versión HTML (más legible e interactiva),
 - [Fuentes de imágenes satelitales orientado al análisis de uso de
   suelo](https://geofis.github.io/curso-sig-doctorado-2024-verano/media/fuentes-imagenes-satelitales-uso-suelo.html)
 
+- [Mapeo de áreas de sensibilidad ambiental, conclusiones, próximos
+  pasos](https://geofis.github.io/curso-sig-doctorado-2024-verano/media/mapa-de-areas-sensibilidad-ambiental.html)
+
 # Fecha
 
 - Días: 1 al 4 de julio, 2024
@@ -76,7 +79,7 @@ Versión HTML (más legible e interactiva),
 - Ejercicio práctico: Uso de Google Earth Engine para análisis de uso de
   suelo
 
-## Día 4: Mapeo de áreas de sensibilidad ambiental y conclusiones
+## Día 4: Mapeo de áreas de sensibilidad ambiental, conclusiones, próximos pasos
 
 ### Primera sesión (1 hora)
 

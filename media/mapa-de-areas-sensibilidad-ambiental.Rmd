@@ -1,0 +1,85 @@
+---
+title: "Mapeo de áreas de sensibilidad ambiental, conclusiones, próximos pasos"
+subtitle: "Curso introductorio a los Sistemas de Información Geográfica (SIG)"
+author: "José Martínez"
+institute: "Universidad Autónoma de Santo Domingo (UASD)"
+date: "2024-07-01 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: center, middle
+background-image: url(img/fondo.jpg)
+
+# Mapeo de áreas de sensibilidad ambiental, conclusiones, próximos pasos
+## Curso introductorio a los Sistemas de Información Geográfica (SIG)
+### *José Martínez*
+### Universidad Autónoma de Santo Domingo (UASD)
+#### 2024-07-04
+
+
+---
+
+# Cuando te toque...
+
+## Pide ayuda al ChatGPT
+
+Desde la siguiente diapositiva en adelante, verás varios ejercicios de aula. Este es un buen momento para que uses el ChatGPT. Pregúntale cómo hacerlo. Para interactuar con dicha herramienta en el contexto de nuestro tema, te recomiendo lo siguiente:
+
+- Concisión. 
+
+- Agilidad. No pierdas tiempo intentando conseguir la mejor ortografía ni la mejor redacción. Las palabras clave, y un "cierto orden", son más importantes. 
+
+- Precisión en lo que se pregunta.
+
+- Mejor dar órdenes.
+
+- Truco: pídele que te documente código informático, que te lo explique.
+
+---
+
+# Acotemos el problema
+
+- ¿Cómo definimos áreas de sensibilidad ambiental?
+
+  - AHP.
+  - Modelización espacial, autocorrelación espacial (clusters de asociación espacial--LISA--, HH, LL).
+  - ¿Metodología de los hotspots de biodiversidad?
+  - Geoestadística.
+
+- ¿Con qué datos?
+
+  - GBIF.
+  - Topografía y morfometría.
+  - Uso y cobertura del suelo.
+  - Tipos de bosque.
+
+---
+
+# Iniciemos el mapa
+
+- Comencemos reuniendo las fuentes.
+
+- Realicemos los análisis correspondientes.
+
+- Extraigamos patrones.
+
+# Referencias destacadas
+
+Bivand, R. S., Pebesma, E., & Gómez-Rubio, V. (2013). Applied Spatial Data Analysis with R. Springer New York. https://doi.org/10.1007/978-1-4614-7618-4
+
+Olaya, V. (2020). Sistemas de Información Geográfica. https://volaya.github.io/libro-sig/
+
+Lovelace, R., Nowosad, J., & Muenchow, J. (2019). Geocomputation with R. Chapman and Hall/CRC. https://r.geocompx.org/
+
+Dorman, M., Graser A., Nowosad, J. & Lovelace, R. (2019). Geocomputation with Python. Chapman and Hall/CRC. https://py.geocompx.org/

@@ -25,7 +25,7 @@ class: center, middle, inverse, title-slide
 ### Universidad Autónoma de Santo Domingo (UASD)
 ]
 .date[
-### 2024-07-01 (updated: 2024-07-03)
+### 2024-07-01 (updated: 2024-07-04)
 ]
 
 ---
@@ -41,7 +41,7 @@ background-image: url(img/fondo.jpg)
 ## Curso introductorio a los Sistemas de Información Geográfica (SIG)
 ### *José Martínez*
 ### Universidad Autónoma de Santo Domingo (UASD)
-#### 2024-07-03
+#### 2024-07-03 y 2024-07-04
 
 
 ---
@@ -154,15 +154,27 @@ Si aún no lo has realizado, te animo a que visites dicho tutorial y lo practiqu
 
 ---
 
-## Clonar un repo como proyecto en R
+## Proyecto de RStudio, cuadernos RMarkdown
 
-Uno de los problemas más comunes que enfrentarás al momento de cargar fuentes en R (y en otros lenguajes) es definir la ruta de tus archivos. Mi recomendación en este sentido es: __abre el repositorio de datos como un proyecto de RStudio__.
+Para realizar análisis reproducibles con tus propios datos, **te recomiendo que crees cuadernos RMarkdown dentro de un proyecto de RStudio**. Si usas esta modalidad, es decir, los proyectos de RStudio, garantizarás que, al momento de importar tus datos, éstos puedan referenciarse inequívocamente usando rutas relativas.
 
-Para hacerlo, sigue estas instrucciones.
+De clases anteriores, recordarás que en un cuaderno RMarkdown escribes bloques de texto y bloques de código. Normalmente, entre los primeros bloques de código, se encuentran comandos que importan tus datos a la sesión de R, y es en este punto donde la modalidad del proyecto de RStudio te resultará más conveniente.
+
+Adicionalmente, si trabajas dentro de un proyecto, también tendrás la ventaja de que los bloques de código de los cuadernos RMarkdown los podrás ejecutar directamente en la consola sin problemas al importar tus datos, facilitándote así los análisis.
 
 ---
 
-### Instrucciones para clonar el repositorio `material-de-apoyo` y abrirlo como proyecto de RStudio
+## Proyecto de RStudio, cuadernos RMarkdown (cont.)
+
+Finalmente, otra gran ventaja es que podrás "tejer" (compilar) un RMarkdown para generar un documento (PDF, HTML) con todos tus análisis sin errores al leer las fuentes, y donde podrás ver tanto los datos de entrada, como el código que usaste y las salidas de cada bloque.
+
+Puedes crear un proyecto "desde cero", en cuyo caso RStudio creará un directorio para alojar todos los archivos que requieras (datos, como tablas, imágenes, etc.). También puedes crear un proyecto en un directorio existente, en cuyo caso RStudio sólo añade unos archivos de referencia sin tocar los que se encuentren en el directorio.
+
+También puedes crear un proyecto de R al clonar un repositorio existente (e.g. de GitHub), lo cual es útil para reproducir análisis hechos por otras personas. En el siguiente ejercicio, te muestro cómo clonar un repo de GitHub y usarlo como proyecto en R.
+
+---
+
+## Instrucciones para clonar el repositorio `material-de-apoyo` y abrirlo como proyecto de RStudio
 
 - Ve al menú `File&gt;New project...`.
 - En el diálogo, presiona `Version Control`. Esto hará que avances a la siguiente ventana.
@@ -173,12 +185,15 @@ Para hacerlo, sigue estas instrucciones.
 
 ---
 
+### Instrucciones para crear un RMarkdown dentro del proyecto
 
-## Cuadernos RMarkdown
+- Asegúrate de que tienes el proyecto `material-de-apoyo` abierto. Si realizaste el ejercicio anterior exitosamente, el proyecto debería estar abierto. De todas formas, para asegurarte que tu proyecto está abierto, fíjate si en la parte superior derecha de la ventana de RStudio, a la derecha de un ícono que simula un cubo azul, aparece el nombre `material-de-apoyo`. En caso contrario, es probable que el proyecto no esté abierto. Si lograste clonar el repo, pero el proyecto está cerrado, mediante la pestaña `Files`, entra al directorio `material-de-apoyo` y haz clic al archivo `material-de-apoyo.Rproj` (o también ve al menú `Files&gt;Recent Projects` y quizá encuentres allí a `material-de-apoyo`).
 
-Para que tus análisis sean reproducibles, y queden acumulados en un único lugar, te recomiendo que crees un cuaderno RMarkdown, en el que escribirás bloques de texto y bloques de código. Los bloques de código los podrás ejecutar directamente en la consola, facilitándote el trabajo de análisis. Adicionalmente, podrás "tejer" (compilar) un documento con todos tus análisis, donde podrás ver tanto el código que usaste, como las salidas de cada bloque.
+- Te preguntará si quieres abrir el proyecto, di que sí. Si no tienes el directorio `material-de-apoyo`, entonces tendrás que realizar el ejercicio anterior.
 
-- Asegúrate de que tienes tu proyecto abierto. Si realizaste el ejercicio anterior exitosamente, el proyecto debería estar abierto. De todas formas, para asegurarte de que tu proyecto está abierto, fíjate si en la parte superior derecha de la ventana de RStudio, a la derecha de un ícono que simula un cubo azul, aparece el nombre `material-de-apoyo`. En caso contrario, es probable que el proyecto no esté abierto. Si lograste clonar el repo, pero el proyecto está cerrado, mediante la pestaña `Files`, entra al directorio `material-de-apoyo` y haz clic al archivo `material-de-apoyo.Rproj`. Te preguntará si quieres abrir el proyecto, di que sí. Si no tienes el directorio `material-de-apoyo`, entonces tendrás que ejecutar el ejercicio -1.
+---
+
+## Instrucciones para crear un RMarkdown dentro del proyecto (cont.)
 
 - Ve a `File&gt;New&gt;R Markdown`.
 
@@ -186,15 +201,19 @@ Para que tus análisis sean reproducibles, y queden acumulados en un único luga
 
 - Presiona `OK`.
 
+- Creaste tu primer RMarkdown. Es un archivo de pruebas de RStudio, el cual usa datos que vienen ya con R. Puedes guardar el RMarkdown e intentar "tejerlo" mediante el botón "Knit" que tiene un icono que simula una madeja azul (o presiona CTRL+SHIFT+K).
+
 ---
 
 # Ejercicios
 
-- "Descargar", visualizar y apilar una escena Landsat 8-9 con QGIS. Abrir Drive de archivos del curso, y entrar en el directorio `datos/ejercicios-dia-3/landsat8-recortada`
+1. "Descargar", visualizar y apilar una escena Landsat 8-9 con QGIS. Abrir [Drive de archivos del curso](https://drive.google.com/drive/folders/1ImWNVz-1OjyxFbiy4yN4dCuDlV51wtar?usp=drive_link), y entrar en el directorio `datos/ejercicios-dia-3/landsat8-recortada`.
 
-- Análisis de ráster categórico de uso y cobertura del suelo (ya clasificado) con QGIS. Abrir Drive de archivos del curso, y entrar en el directorio `datos/ejercicios-dia-3/mapa-uso-y-cobertura-diarena-2012`
+2. Análisis de ráster categórico de uso y cobertura del suelo (ya clasificado) con EE. Abrir [script](https://code.earthengine.google.com/8d86258828f2ce4a369587cc2dce100c)
 
-- Análisis de ráster categórico de uso y cobertura del suelo (ya clasificado) con R.
+3. Análisis de ráster categórico de uso y cobertura del suelo (ya clasificado) con QGIS. Abrir Drive de archivos del curso, y entrar en el directorio `datos/ejercicios-dia-3/mapa-uso-y-cobertura-diarena-2012`.
+
+4. Análisis de ráster categórico de uso y cobertura del suelo (ya clasificado) con R.
 
 ---
 
