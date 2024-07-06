@@ -81,10 +81,10 @@ map <- leaflet() %>%
 ```{r, results='asis', echo=F}
 if (grepl('gfm', output_format)) {
   # Guardar el mapa como HTML y luego capturar una imagen
-  # saveWidget(map, "temp_map.html", selfcontained = TRUE)
-  # webshot("temp_map.html", file = "map.png", vwidth = 600, vheight = 400, cliprect = "viewport")
+  saveWidget(map, "temp_map.html", selfcontained = TRUE)
+  webshot("temp_map.html", file = "map.png", vwidth = 600, vheight = 400, cliprect = "viewport")
   cat("![Mapa](map.png)")
-  # invisible(file.remove('temp_map.html'))
+  invisible(file.remove('temp_map.html'))
 }
 ```
 
